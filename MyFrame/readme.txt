@@ -4,3 +4,4 @@
 4.glide  https://github.com/bumptech/glide
 5.convenientbanner  https://github.com/saiwu-bigkoo/Android-ConvenientBanner
 6. https://github.com/search
+7.PhotoView https://github.com/bm-x/PhotoView
