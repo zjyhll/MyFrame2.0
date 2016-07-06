@@ -10,6 +10,8 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        // é»˜è®¤æ˜¯firçš„æ¸ é“
+        manifestPlaceholders = [ UMENG_CHANNEL_VALUE:"fir" ]
     }
     buildTypes {
         release {
@@ -23,7 +25,7 @@ android {
         }
     }
 
-    //ÅäÖÃkeystoreÇ©Ãû
+    //ï¿½ï¿½ï¿½ï¿½keystoreÇ©ï¿½ï¿½
 //    signingConfigs {
 //        release {
 //            storeFile file("bdoutdoorkey")
@@ -40,6 +42,19 @@ android {
 //            signingConfig signingConfigs.release
 //        }
 //    }
+    //æ·»åŠ æ¸ é“ 360 è…¾è®¯ è±Œè±†å¤¹ å°ç±³ å®‰æ™º ç™¾åº¦
+    productFlavors {
+//        qihu360 {}
+//        tencent {}
+//        wandoujia {}
+//        xiaomi {}
+//        anzhi{}
+//        baidu {}
+        fir{}
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
 }
 
 dependencies {
@@ -56,10 +71,15 @@ dependencies {
     compile 'com.bigkoo:alertview:1.0.1'
     compile 'com.android.support:recyclerview-v7:22.0.+'
     compile 'com.android.support:cardview-v7:22.0.+'
-    compile 'com.bigkoo:convenientbanner:2.0.4'//banner»¬¶¯¿ò
-    compile 'com.github.bumptech.glide:glide:3.6.1'//Í¼Æ¬´¦Àí
-    compile 'org.litepal.android:core:1.3.1'//Êý¾Ý¿â
-    compile 'com.mcxiaoke.volley:library:1.0.19'//ÍøÂç¿ò¼Ü
-    compile 'org.greenrobot:eventbus:3.0.0'//ÊÂ¼þ´¦Àí
-    compile 'com.bigkoo:svprogresshud:1.0.2'//µ¯³ö¶Ô»°¿ò  svprogresshuddemo
+    compile 'com.bigkoo:convenientbanner:2.0.4'//bannerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    compile 'com.github.bumptech.glide:glide:3.6.1'//Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
+    compile 'org.litepal.android:core:1.3.1'//ï¿½ï¿½ï¿½Ý¿ï¿½
+    compile 'com.mcxiaoke.volley:library:1.0.19'//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    compile 'org.greenrobot:eventbus:3.0.0'//ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
+    compile 'com.bigkoo:svprogresshud:1.0.2'//ï¿½ï¿½
+    compile 'com.jakewharton:butterknife:7.0.1'// ï¿½ï¿½
+    compile 'org.litepal.android:core:1.3.1'// ï¿½
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'//
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
